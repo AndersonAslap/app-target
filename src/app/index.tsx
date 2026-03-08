@@ -1,10 +1,16 @@
+import { router } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 
 export default function Index() {
     return (
-        <View>
+        <View style={{ flex: 1, justifyContent: "center"}}>
             <Text>Olá, Aslap</Text>
+
+            <Button 
+                title="Target" 
+                onPress={() => router.navigate("/target")} 
+            />
         </View>
     )
 }

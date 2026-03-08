@@ -61,6 +61,11 @@ metro.config.js
 npx expo prebuild
 ```
 
+
+
+
+
+
 # Erros
 
 # Correção de Erro de Build no Android (Expo / React Native)
