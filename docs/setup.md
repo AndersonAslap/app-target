@@ -61,9 +61,20 @@ metro.config.js
 npx expo prebuild
 ```
 
+> Instalando fonts personalizadas
 
+- acesse o site (https://fonts.google.com/) e (expo google fonts)
 
+- Instale o expo google fonts
 
+```bash
+npx expo install expo-font @expo-google-fonts/inter
+```
+- em seguida realizar um pré-build
+
+```bash
+npx expo prebuild
+```
 
 
 # Erros
@@ -124,3 +135,65 @@ Limpar o `node_modules` e as pastas de build do Android é uma prática comum pa
 * alteração do **package name**
 * atualização de dependências
 * mudanças na configuração do Android
+
+
+# Correção de Conflito de Dependências (ERESOLVE) no NPM
+
+## ❌ Problema
+
+Ao tentar instalar a biblioteca de fontes com o comando:
+
+```bash
+npx expo install @expo-google-fonts/inter expo-font
+````
+
+ocorreu o seguinte erro:
+
+```
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+```
+
+O erro indicava um **conflito de dependências entre as versões do React e React DOM**.
+
+Trecho relevante do erro:
+
+```
+Found: react@19.2.0
+Could not resolve dependency:
+peer react@"^19.2.4" from react-dom@19.2.4
+```
+
+Isso significa que:
+
+* O projeto estava utilizando **React 19.2.0**
+* Uma dependência exigia **React 19.2.4**
+
+Como o **NPM não conseguiu resolver automaticamente esse conflito**, a instalação do pacote foi interrompida.
+
+---
+
+# ✅ Solução Aplicada
+
+A solução foi **atualizar o React e o React DOM para a versão compatível exigida pelas dependências**.
+
+Foi executado o seguinte comando:
+
+```bash
+npm install react@19.2.4 react-dom@19.2.4
+```
+
+Após a atualização das dependências, o conflito foi resolvido e a instalação das demais bibliotecas pôde ser realizada normalmente.
+
+---
+
+# 💡 Observação
+
+Conflitos de dependência como esse podem ocorrer quando:
+
+* versões diferentes de bibliotecas exigem **versões específicas do React**
+* há **atualizações recentes em dependências do projeto**
+* bibliotecas utilizam **peerDependencies** com versões específicas
+
+Nesses casos, alinhar manualmente as versões das dependências geralmente resolve o problema.
+
