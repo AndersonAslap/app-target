@@ -76,6 +76,17 @@ npx expo install expo-font @expo-google-fonts/inter
 npx expo prebuild
 ```
 
+> Instalar o componente que renderiza cores gradiente
+
+```bash
+npx expo install expo-linear-gradient
+```
+
+- após as configurações executar os comandos
+
+```bash
+npx expo prebuild
+```
 
 # Erros
 
