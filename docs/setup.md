@@ -88,6 +88,12 @@ npx expo install expo-linear-gradient
 npx expo prebuild
 ```
 
+> Instalando lib para input de currency
+
+```bash
+npm install react-native-currency-input
+```
+
 # Erros
 
 # Correção de Erro de Build no Android (Expo / React Native)
