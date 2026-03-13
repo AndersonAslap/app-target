@@ -39,8 +39,6 @@ const styles = StyleSheet.create({
         flex: 1
     },
     listContent: {
-        gap: 16,
-        paddingTop: 16,
         paddingBottom: 72, // usar como referência o tamanho do componente que no caso é o componente summary
     },
     title: {
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
         borderBottomWidth: 1,
         borderBottomColor: colors.gray["200"],
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: fontFamily.medium,
         color: colors.black
     },
